@@ -1,8 +1,9 @@
 import Vue from 'vue'
-import App from './App.vue'
 
-Vue.config.productionTip = false
+// include vue-custom-element plugin to Vue
+import VueCustomElement from 'vue-custom-element'
+Vue.use(VueCustomElement)
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+// import and register your component(s)
+import ChatVueCustomElement from './components/Chat.vue'
+Vue.customElement('chat-vue-custom-element', ChatVueCustomElement)
