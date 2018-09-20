@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="chat-header">
-      #{{id}}: {{ name }}
+      #{{id}}: {{prefix}} {{name}}
     </div>
     <div class="chat-body" ref="conversation">
       <div v-for="(m, i) in messages" :key="i">
@@ -30,7 +30,8 @@ export default {
   name: 'Chat',
   props: {
     thread: Object,
-    userName: String,
+    name: String,
+    prefix: String,
     id: Number,
     msg: Array
   },
