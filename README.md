@@ -1,10 +1,10 @@
-# chat-vue-custom-element
+# Vue Custom Element Bundler
 
-Example using Rollup to bundle one or many Vue.js components into a single .js file that **can be used in any HTML/JS application.**
-
-Another example using Webpack available [here](https://github.com/kartsims/vue-customelement-bundler).
+Example using Webpack to bundle one or many Vue.js components into a single .js file that **can be used in any HTML/JS application.**
 
 Refer to [this post on vuetips.com](http://vuetips.com/vue-web-components) for more information.
+
+Check out [this example using rollup.js](https://github.com/kartsims/vue-customelement-bundler/tree/rollup) for a 25% lighter file (when gzipped) !
 
 ```html
 <html>
@@ -37,7 +37,7 @@ To add a component :
 
 To test your components :
 
-- Launch rollup : `npm run dev` (watch mode)
+- Launch webpack : `npm run dev` (watch mode)
 - Open `demo/index.html` in a browser
 - Edit `src/main.js` or your component file
 - Refresh the page
@@ -50,4 +50,14 @@ npm run build
 
 File will be placed in `dist/my-vue-component.js`.
 
-Refer to `rollup.config.js` for customization options.
+Refer to `webpack.config.js` for customization options.
+
+## Browser compability
+
+You may add the web component polyfill if you wish to support older browsers.
+
+```
+import 'document-register-element/build/document-register-element'
+```
+
+Thanks to @visualjerk for this proposal.
